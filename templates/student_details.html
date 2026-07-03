@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Details{% endblock %}
+
+{% block content %}
+<div class="details-container">
+    <div class="profile-sidebar">
+        {% if student.image_path %}
+            <img src="{{ url_for('static', filename=student.image_path) }}" alt="Student Image" class="profile-img">
+        {% else %}
+            <div class="placeholder-img">No Image</div>
+        {% endif %}
+        <h2>{{ student.fname }} {{ student.lname }}</h2>
+        <div class="status-badge" id="current-status">{{ student.admission_status }}</div>
+    </div>
+
+    <div class="profile-details">
+        <div class="info-section">
+            <h3 class="section-title">Personal Information</h3>
+            <p><strong>Email:</strong> {{ student.email }}</p><br>
+            <p><strong>Gender:</strong> {{ student.sex }}</p><br>
+            <p><strong>Phone Number:</strong> {{ student.phone }}</p><br>
+            <p><strong>Date Of Birth:</strong> {{ student.dob }}</p><br>
+            <p><strong>Address:</strong> {{ student.address }}</p>
+        </div>
+
+        <div class="info-section">
+            <h3 class="section-title">Other Information</h3>
+            <div class="info-grid">
+                <p><strong>State Of Origin:</strong> {{ student.state_of_origin }}</p>
+                <p><strong>Local Govt:</strong> {{ student.local_depaerment }}</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3 class="section-title">Academics Related Information</h3>
+            <div class="info-grid-3">
+                <p><strong>Next Of Kin:</strong> {{ student.next_of_kin }}</p>
+                <p><strong>Jamb Score:</strong> {{ student.score }}</p>
+                <p><strong>Status:</strong> <span id="text-status">{{ student.admission_status }}</span></p>
+                <div class="status-changer">
+                    <label>Change Status:</label>
+                    <select id="status-select" data-id="{{ student.id }}">
+                        <option value="undecided" {% if student.admission_status == 'undecided' %}selected{% endif %}>undecided</option>
+                        <option value="admitted" {% if student.admission_status == 'admitted' %}selected{% endif %}>admitted</option>
+                        <option value="rejected" {% if student.admission_status == 'rejected' %}selected{% endif %}>rejected</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/details.js') }}"></script>
+{% endblock %}

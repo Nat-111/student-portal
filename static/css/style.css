@@ -1,0 +1,634 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+nav
+{
+background-color:#2b2151 ;
+
+}
+ul
+{
+    list-style-type: none;
+    display: flex;
+
+}
+li {
+    height:60px;
+}
+
+.push-right {
+    margin-left: auto;
+}
+
+a{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: center;
+    color:white;
+    text-decoration: none;
+    height:100%;
+    
+}
+#stared
+{
+  
+  
+   color: grey;
+   font-size: 20px;
+  
+
+}
+
+
+
+#title{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#home{
+   font-size: 20px;
+
+   color :grey;
+   
+}   
+
+#footer
+{
+    background-color:#2b2151;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.home-content
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+img
+{
+ height: 500px;
+ display:inline-block ;
+}
+
+#portal-desc{
+
+    color: rgb(143, 67, 44);
+    font-size: 30px;
+     margin-bottom: 15px;
+}
+
+#portal-title{
+    font-size: 50px;
+    font-weight: bold;
+    color:#2b2151;
+    margin-bottom: 15px;
+}
+
+#register-btn
+{
+    background-color: #2b2151;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color:rgb(143, 67, 44) ;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+#form-title
+{
+    color: #2b2151;
+    font-size: 30px;
+     margin-bottom: 15px;
+     text-align: center;
+}
+
+.form-content{
+     display: flex;
+    
+    flex-direction: column;
+    padding: 50px;
+    background-color: lightblue;
+}
+
+
+
+#form-desc
+{
+font-style: italic;
+color: red;
+
+align-items: center;
+
+}
+
+p#form-desc {
+   margin-right: auto;
+}
+
+#personal-info
+{
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(56, 48, 48, 0.767);
+    width: 100%;
+    color: white;
+}
+
+
+
+.container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+}
+
+
+.box1, .box2
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    width: 48%;
+}
+
+.box1 input:not([type="radio"]), .box1 select, .box1 textarea,
+.box2 input:not([type="radio"]), .box2 select, .box2 textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+label{
+
+   font-weight: bold;
+    font-size: 20px;
+    color: #2b2151;
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border:none; 
+    font-size: 16px;
+    
+ 
+}
+input[type="text"]{
+   
+
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border:none; 
+    font-size: 16px;
+}
+
+input[type="select"]{
+   
+
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border:none; 
+    font-size: 16px;
+}
+
+
+input[type="email"]{
+   
+
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border:none; 
+    font-size: 16px;
+}
+
+
+#gender
+{
+   font-weight: bold;
+    font-size: 20px;
+    color: #2b2151;
+    margin-bottom: 10px; 
+}
+
+
+.main-content
+{
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(247, 246, 246, 0.966);
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+#submit-btn
+{
+    background-color:  rgba(56, 48, 48, 0.767);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Students Table Styles */
+.students-container {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.info-alert {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.filter-input, .filter-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.search-btn {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.students-table thead th {
+    border-top: 3px solid #6f42c1;
+    border-bottom: 3px solid #6f42c1;
+    padding: 15px;
+    text-align: center;
+    color: #6f42c1;
+}
+
+.students-table tbody td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.action-btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Student Details Profile Styles */
+.details-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.profile-sidebar {
+    width: 250px;
+    background-color: #c98860;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid white;
+}
+
+.placeholder-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.status-badge {
+    background-color: #17a2b8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    background-color: #e0f2fe;
+    color: #4b5563;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.status-changer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-changer select {
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    #title {
+        font-size: 24px;
+    }
+
+    #home {
+        font-size: 14px;
+    }
+
+    #stared {
+        font-size: 14px;
+    }
+
+    /* Home page */
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    img {
+        height: 250px;
+        margin-top: 20px;
+    }
+
+    #portal-title {
+        font-size: 30px;
+    }
+
+    #portal-desc {
+        font-size: 18px;
+    }
+
+    /* Form page */
+    .form-content {
+        padding: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .box1, .box2 {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #personal-info {
+        font-size: 22px;
+    }
+
+    #form-title {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    #submit-btn {
+        font-size: 16px;
+    }
+
+    /* Students table page */
+    .students-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .students-table thead th,
+    .students-table tbody td {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    /* Student details page */
+    .details-container {
+        flex-direction: column;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navbar */
+    ul {
+        flex-wrap: wrap;
+    }
+
+    li {
+        height: 45px;
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    #home, #stared {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    a {
+        padding: 0 10px;
+    }
+
+    /* Home page */
+    img {
+        height: 180px;
+    }
+
+    #portal-title {
+        font-size: 22px;
+    }
+
+    #portal-desc {
+        font-size: 14px;
+    }
+
+    #register-btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    /* Form page */
+    .form-content {
+        padding: 10px;
+    }
+
+    #personal-info {
+        font-size: 18px;
+    }
+
+    #form-title {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+    }
+
+    #submit-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Students table */
+    .students-table thead th,
+    .students-table tbody td {
+        padding: 8px 3px;
+        font-size: 12px;
+    }
+
+    /* Details page */
+    .details-container {
+        padding: 10px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details p {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 14px;
+    }
+
+    #footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+}
+

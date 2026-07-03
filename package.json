@@ -1,0 +1,23 @@
+{
+  "name": "student-portal",
+  "version": "1.0.0",
+  "description": " Student Portal built with Flask and Tailwind CSS",
+  "keywords": [
+    "flask",
+    "tailwind",
+    "python"
+  ],
+  "license": "ISC",
+  "author": "Nathaniel Opata Agbodzi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./static/src/input.css -o ./static/css/output.css",
+    "watch": "tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "tailwindcss": "^4.3.2"
+  }
+}

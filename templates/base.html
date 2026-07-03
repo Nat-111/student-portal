@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal {% block title %}{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" id="title">startocode</a></li>
+            <li><a href="{{url_for('index')}}" id="home">Home</a></li>
+            <li class="push-right"><a href="{{url_for('form')}}" id="stared">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+    {% block content %}
+    {% endblock %}
+    </main>
+
+    <footer>
+        <p id="footer">All rights reserved ©startocode 2023</p>
+    </footer>
+</body>
+</html>
