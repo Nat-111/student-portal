@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import inspect, text
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -27,7 +28,7 @@ class Student(db.Model):
     phone = db.Column(db.String(20))
     email = db.Column(db.String(120))
     state_of_origin = db.Column(db.String(100))
-    local_depaerment = db.Column(db.String(100))
+    local_department = db.Column(db.String(100))
     next_of_kin = db.Column(db.String(150))
     sex = db.Column(db.String(20))
     address = db.Column(db.Text)
@@ -36,6 +37,14 @@ class Student(db.Model):
 
 with app.app_context():
     db.create_all()
+    inspector = inspect(db.engine)
+    columns = [column['name'] for column in inspector.get_columns('student')]
+    if 'local_department' not in columns:
+        if 'local_depaerment' in columns:
+            db.session.execute(text('ALTER TABLE student RENAME COLUMN local_depaerment TO local_department'))
+        else:
+            db.session.execute(text('ALTER TABLE student ADD COLUMN local_department VARCHAR(100)'))
+        db.session.commit()
 
 @app.route('/')
 def index():
@@ -51,7 +60,7 @@ def form():
         phone = request.form.get('phone')
         email = request.form.get('email')
         state_of_origin = request.form.get('state_of_origin')
-        local_depaerment = request.form.get('local_depaerment')
+        local_department = request.form.get('local_department')
         next_of_kin = request.form.get('next_of_kin')
         sex = request.form.get('sex')
         address = request.form.get('address')
@@ -76,7 +85,7 @@ def form():
             phone=phone,
             email=email,
             state_of_origin=state_of_origin,
-            local_depaerment=local_depaerment,
+            local_department=local_department,
             next_of_kin=next_of_kin,
             sex=sex,
             address=address,

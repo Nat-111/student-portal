@@ -1,52 +1,65 @@
-{% extends 'base.html' %}
-
-{% block title %}Students Records{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %}Students Records{% endblock %} {%
+block content %}
 <div class="students-container">
-    <div class="info-alert">
-        <strong>Info!</strong> All students records table
-    </div>
+  <div class="info-alert">
+    <strong>Info!</strong> All students records table
+  </div>
 
-    <div class="filters">
-        <input type="text" placeholder="Search Record By Name Only" class="filter-input">
-        <select class="filter-select"><option>Select-Admission-Status</option></select>
-        <select class="filter-select"><option>Select-Gender</option></select>
-        <input type="text" placeholder="Enter Jamb Score" class="filter-input">
-        <button class="search-btn">search</button>
-    </div>
+  <div class="filters">
+    <input
+      type="text"
+      placeholder="Search Record By Name Only"
+      class="filter-input"
+    />
+    <select class="filter-select">
+      <option>Select-Admission-Status</option>
+    </select>
+    <select class="filter-select">
+      <option>Select-Gender</option>
+    </select>
+    <input type="text" placeholder="Enter Jamb Score" class="filter-input" />
+    <button class="search-btn">search</button>
+  </div>
 
-    <table class="students-table">
-        <thead>
-            <tr>
-                <th>S/n</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Jamb Score</th>
-                <th>Admission Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for student in students %}
-            <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{ student.fname }} {{ student.mname or '' }} {{ student.lname }}</td>
-                <td>{{ student.sex }}</td>
-                <td>{{ student.score }}</td>
-                <td>{{ student.admission_status }}</td>
-                <td>
-                    <a href="{{ url_for('student_details', id=student.id) }}" class="action-btn">
-                        &#128065;
-                    </a>
-                </td>
-            </tr>
-            {% else %}
-            <tr>
-                <td colspan="6" style="text-align: center;">No student records found.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  <table class="students-table">
+    <thead>
+      <tr>
+        <th>S/n</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Jamb Score</th>
+        <th>Admission Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>
+          {{ student.fname }} {{ student.mname or '' }} {{ student.lname }}
+        </td>
+        <td>{{ student.sex }}</td>
+        <td>{{ student.score }}</td>
+        <td>{{ student.admission_status }}</td>
+        <td>
+          <button
+            type="button"
+            onclick="location.href='{{ url_for('student_details', id=student.id) }}'"
+            class="action-btn"
+          >
+            View
+          </button>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="6" style="text-align: center">
+          No student records found.
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 {% endblock %}
